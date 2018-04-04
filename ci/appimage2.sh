@@ -34,7 +34,7 @@ ls -lh build/appimage
 
 # Go into the folder created when running the Docker container:
 printf '%s\n' "" "sudo chown -R $USER build"
-#chown -R "$USER" build || exit 1
+sudo chown -R "$USER" build || exit 1
 cd build/appimage || exit 1
 
 export APPIMAGEBASE="$(pwd)"
