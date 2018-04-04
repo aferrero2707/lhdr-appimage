@@ -113,7 +113,7 @@ cd $DIR/usr
 echo "Input parameters: \"$@\""
 echo ""
 echo "Input File: $1"
-ldd bin/luminance-hdr.bin
+ldd bin/luminance-hdr
 echo ""
-echo "$HERE/luminance-hdr.bin \"$@\""
-bin/luminance-hdr.bin "$@"
+echo "$HERE/luminance-hdr \"$@\""
+bin/luminance-hdr "$@"
