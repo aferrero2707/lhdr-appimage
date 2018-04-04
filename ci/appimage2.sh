@@ -42,9 +42,11 @@ export APPDIR="$(pwd)/${APP}.AppDir"
 
 # Get the latest version of the AppImage helper functions,
 # or use a fallback copy if not available:
-if ! wget "https://github.com/probonopd/AppImages/raw/master/functions.sh" --output-document="./functions.sh"; then
-    cp -a "${TRAVIS_BUILD_DIR}/ci/functions.sh" ./functions.sh || exit 1
-fi
+#if ! wget "https://github.com/probonopd/AppImages/raw/master/functions.sh" --output-document="./functions.sh"; then
+#    cp -a "${TRAVIS_BUILD_DIR}/ci/functions.sh" ./functions.sh || exit 1
+#fi
+#wget "https://github.com/probonopd/AppImages/raw/master/functions.sh" --output-document="./functions.sh"
+cp -a "${TRAVIS_BUILD_DIR}/ci/functions.sh" ./functions.sh || exit 1
 
 # Source the script:
 . ./functions.sh
