@@ -39,7 +39,7 @@ addons:
 
 before_script:
     - cat /opt/qt58/bin/qt58-env.sh
-    - /opt/qt58/bin/qt58-env.sh
+    - source /opt/qt58/bin/qt58-env.sh
     - git clone https://github.com/LuminanceHDR/LuminanceHDR.git
     - cd LuminanceHDR
     - mkdir -p build
