@@ -14,7 +14,7 @@ before_script:
   - rm -rf LuminanceHDR/ci
   - cp -a ci LuminanceHDR
   - cd LuminanceHDR
-  - ci/check_commit.sh master
+  - bash ci/check_commit.sh master
   - 'if [ -e travis.cancel ]; then
         exit 0;
     fi'
