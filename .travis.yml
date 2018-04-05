@@ -9,7 +9,6 @@ services: docker
 before_script:
   - git clone https://github.com/SpiNNakerManchester/SupportScripts.git support
   - python support/travis_blocking_stdout.py
-  - travis_wait 120 sleep infinity & sudo docker pull photoflow/docker-trusty-appimage-base
   - git clone https://github.com/LuminanceHDR/LuminanceHDR.git
   - rm -rf LuminanceHDR/ci
   - cp -a ci LuminanceHDR
@@ -18,6 +17,7 @@ before_script:
   - 'if [ -e travis.cancel ]; then
         exit 0;
     fi'
+  - travis_wait 120 sleep infinity & sudo docker pull photoflow/docker-trusty-appimage-base
   - sudo docker run -it -v $(pwd):/sources -e "GIT_BRANCH=master" photoflow/docker-trusty-appimage-base bash /sources/ci/appimage.sh
   - bash ci/appimage2.sh
 
