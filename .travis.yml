@@ -14,10 +14,11 @@ before_script:
   - rm -rf LuminanceHDR/ci
   - cp -a ci LuminanceHDR
   - cd LuminanceHDR
-  - sudo docker run -it -v $(pwd):/sources -e "GIT_BRANCH=master" photoflow/docker-trusty-appimage-base bash /sources/ci/appimage.sh
+  - ci/check_commit.sh master
   - 'if [ -e travis.cancel ]; then
         exit 0;
     fi'
+  - sudo docker run -it -v $(pwd):/sources -e "GIT_BRANCH=master" photoflow/docker-trusty-appimage-base bash /sources/ci/appimage.sh
   - bash ci/appimage2.sh
 
 after_success:
