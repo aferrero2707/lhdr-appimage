@@ -274,9 +274,9 @@ echo ""
 echo "Copy desktop file and application icon"
 
 # Copy desktop and icon file to AppDir for AppRun to pick them up
-mkdir -p usr/share/applications/
-echo "cp \"/${PREFIX}/share/applications/$LOWERAPP.desktop\" \"usr/share/applications\""
-cp "/${PREFIX}/share/applications/$LOWERAPP.desktop" "usr/share/applications" || exit 1
+mkdir -p usr/share/applications/ || exit 1
+echo "cp \"/${PREFIX}/share/applications/net.sourceforge.qtpfsgui.LuminanceHDR.desktop\" \"usr/share/applications\""
+cp "/${PREFIX}/share/applications/net.sourceforge.qtpfsgui.LuminanceHDR.desktop" "usr/share/applications" || exit 1
 
 # Copy hicolor icon theme
 mkdir -p usr/share/icons
@@ -296,8 +296,11 @@ echo ""
 # TODO Might want to "|| exit 1" these, and generate_status
 #get_apprun || exit 1
 cp -a "${AI_SCRIPTS_DIR}/AppRun" . || exit 1
-get_desktop || exit 1
+#get_desktop || exit 1
+cp "/${PREFIX}/share/applications/net.sourceforge.qtpfsgui.LuminanceHDR.desktop" ./$LOWERAPP.desktop || exit 1
 get_icon || exit 1
+mkdir -p "./usr/share/metainfo/" || exit 1
+cp "/${PREFIX}/share/appdata/net.sourceforge.qtpfsgui.LuminanceHDR.appdata.xml" "./usr/share/metainfo/${LOWERAPP}.appdata.xml" || exit 1
 
 
 echo ""
