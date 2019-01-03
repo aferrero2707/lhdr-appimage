@@ -111,7 +111,7 @@ echo ""
 
 sudo add-apt-repository -y ppa:beineri/opt-qt58-trusty
 sudo apt-get update
-sudo apt-get install -y git wget g++ gettext intltool qt58base qt58svg qt58webengine qt58tools libtool autoconf automake make libexiv2-dev mesa-common-dev libalglib-dev libboost-all-dev libfftw3-dev libtiff5-dev libpng12-dev libopenexr-dev libgsl0-dev libcfitsio3-dev liblcms2-dev
+sudo apt-get install -y git wget g++ gettext intltool qt58base qt58svg qt58webengine qt58tools libtool autoconf automake make libexiv2-dev mesa-common-dev libalglib-dev libboost-all-dev libfftw3-dev libtiff5-dev libpng12-dev libopenexr-dev libgsl0-dev libcfitsio3-dev liblcms2-dev libeigen3-dev
 
 # Set environment variables to allow finding the dependencies that are
 # compiled from sources
