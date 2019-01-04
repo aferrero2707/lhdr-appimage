@@ -147,7 +147,7 @@ if [ ! -e LibRaw ]; then
 fi
 ls /usr/share/cmake-2.8/Modules/
 cmake --version
-cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/$PREFIX /sources || exit 1
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/$PREFIX -DCMAKE_MODULE_PATH=/usr/share/cmake-2.8/Modules /sources || exit 1
 make --jobs=2 || exit 1
 sudo make install || exit 1
 
