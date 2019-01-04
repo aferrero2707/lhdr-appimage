@@ -145,6 +145,8 @@ if [ ! -e LibRaw ]; then
 	./configure --prefix=/usr && \
 	make -j2 && sudo make install) || exit 1
 fi
+ls /usr/share/cmake-2.8/Modules/
+cmake --version
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/$PREFIX /sources || exit 1
 make --jobs=2 || exit 1
 sudo make install || exit 1
